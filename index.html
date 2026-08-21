@@ -1,477 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zhiwei Hu</title>
-    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/emoji/48/robot-emoji.png">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', 'Roboto', 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #000000;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 80px;
-            background-color: #ffffff;
-        }
-
-        .container {
-            display: flex;
-            min-height: 100vh;
-            padding: 0;
-        }
-
-        .left-section {
-            width: 25%;
-            position: fixed;
-            padding: 0 30px;
-            background-color: #ffffff;
-            height: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            top: 60px;
-            left: 180px;
-        }
-
-        .profile-image {
-            width: 230px;
-            height: 230px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-            object-fit: cover;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .contact-info {
-            text-align: left;
-            margin-top: 15px;
-            font-size: 0.9em;
-            font-weight: 400;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0;
-        }
-
-        .contact-info p {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-            font-family: 'Inter', sans-serif;
-            width: 100%;
-        }
-
-        .contact-info .emoji {
-            margin-right: 10px;
-            font-size: 1.2em;
-            flex-shrink: 0;
-        }
-
-        .social-links {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .social-links a {
-            margin: 0 12px;
-            color: #333;
-            text-decoration: none;
-            font-weight: normal;
-        }
-
-        .social-links svg {
-            fill: #000000;  /* 设置图标颜色 */
-            transition: fill 0.2s ease;
-        }
-
-        .social-links a:hover svg {
-            fill: #666666;  /* 悬停时的颜色 */
-        }
-
-        .social-links i {
-            font-size: 22px;
-            color: #000000;
-            transition: color 0.2s ease;
-        }
-
-        .social-links a:hover i {
-            color: #666666;
-        }
-
-        .right-section {
-            width: 75%;
-            margin-left: 25%;
-            padding: 30px 10px 40px 100px;
-            margin-right: 30px;
-        }
-
-        h1 {
-            font-size: 2em;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        h2 {
-            font-size: 1.8em;
-            margin: 20px 0 10px 0;
-            color: #000000;
-            font-weight: 500;
-        }
-
-        h3 {
-            font-weight: 400;
-            color: #000000;
-            margin-bottom: 10px;
-        }
-
-        .left-section h2 {
-            margin: 15px 0 8px 0;
-            font-size: 1.6em;
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: 0.5px;
-        }
-
-        .left-section h3 {
-            margin: 0 0 8px 0;
-            font-size: 1.6em;
-            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            letter-spacing: 2px;
-        }
-
-        .publication {
-            margin-bottom: 15px;
-            /* padding: 6px px; */
-            background-color: #ffffff;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .publication-title {
-            /* text-align: justify; */
-            word-break: break-word;
-            hyphens: auto;
-            font-weight: 500;
-            font-size: 0.9em;
-            margin-bottom: 8px;
-            color: #000000;
-            line-height: 1.4;
-        }
-
-        .publication-authors {
-            color: #666666;
-            margin-bottom: 8px;
-            font-size: 0.8em;
-        }
-
-        .publication-authors strong {
-            color: #000000;
-            font-weight: 500;
-        }
-
-        .publication-venue {
-            display: inline-block;
-            padding: 2px 6px;
-            background-color: #f5f5f5;
-            /* border: 1px solid #000000; */
-            border-radius: 4px;
-            font-size: 0.7em;
-            color: #000000;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            width: 90px;
-            text-align: center;
-        }
-
-        .publication-venue-large {
-            display: inline-block;
-            padding: 2px 6px;
-            background-color: #f5f5f5;
-            /* border: 1px solid #000000; */
-            border-radius: 4px;
-            font-size: 0.7em;
-            color: #000000;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            width: 170px;
-            text-align: center;
-        }
-
-        .publication-links a {
-            display: inline-block;
-            padding: 2px 6px;
-            background-color: #ffffff;  /* 白色背景 */
-            border: 1px solid #000000;  /* 黑色边框 */
-            border-radius: 4px;
-            color: #000000;  /* 黑色字体 */
-            text-decoration: none;
-            font-size: 0.7em;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        .publication-links a:hover {
-            background-color: #f8f8f8;  /* 悬停时背景色略微变灰 */
-            transform: translateY(-0.5px);  /* 轻微上浮效果 */
-            box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);  /* 添加阴影效果 */
-        }
-
-        .publication-meta {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .publication-links {
-            margin-top: 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* 普通链接样式 */
-        a {
-            color: #1a1a1a;
-            text-decoration: underline;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        a:hover {
-            color: #000000;
-        }
-
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
-        /* 或者使用 Playfair Display */
-        /* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap'); */
-        /* 或者使用 Poppins */
-        /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap'); */
-
-        /* 添加响应式设计 */
-        @media screen and (max-width: 768px) {
-            body {
-                padding: 20px;  /* 减小body的内边距 */
-            }
-
-            .container {
-                flex-direction: column;  /* 改为纵向布局 */
-            }
-
-            .left-section {
-                position: relative;  /* 取消固定定位 */
-                width: 100%;  /* 占满宽度 */
-                left: 0;  /* 重置左侧位置 */
-                top: 0;
-                padding: 20px 0;
-                margin-bottom: 30px;
-            }
-
-            .right-section {
-                width: 100%;  /* 占满宽度 */
-                margin-left: 0;  /* 移除左侧margin */
-                padding: 0;  /* 移除内边距 */
-            }
-
-            .profile-image {
-                width: 180px;  /* 稍微减小头像尺寸 */
-                height: 180px;
-            }
-
-            .contact-info {
-                width: 100%;  /* 联系信息占满宽度 */
-                max-width: 300px;  /* 但限制最大宽度 */
-            }
-
-            .publication-meta {
-                flex-wrap: wrap;  /* 允许换行 */
-                gap: 10px;  /* 减小间距 */
-            }
-
-            .publication-venue {
-                width: 90px;  /* 稍微减小宽度 */
-                font-size: 0.65em;  /* 减小字体 */
-            }
-
-            .publication-venue-large{
-                width: 170px;  /* 稍微减小宽度 */
-                font-size: 0.65em;  /* 减小字体 */
-            }
-
-            . a {
-                font-size: 0.65em;  /* 减小字体 */
-            }
-
-            .publication-title {
-                font-size: 0.85em;  /* 减小标题字体 */
-            }
-
-            .publication-authors {
-                font-size: 0.75em;  /* 减小作者字体 */
-            }
-        }
-
-        /* 针对更小屏幕的额外调整 */
-        @media screen and (max-width: 480px) {
-            body {
-                padding: 15px;
-            }
-
-            .profile-image {
-                width: 150px;
-                height: 150px;
-            }
-
-            h2 {
-                font-size: 1.5em;
-            }
-        }
-    </style>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yin Fang</title>
+  <meta name="author" content="Yin Fang">
+  <meta name="description" content="Yin Fang, postdoctoral fellow at the National Library of Medicine, NIH, working on biomedical AI.">
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem("theme");
+      var preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", savedTheme || preferredTheme);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,650;1,9..40,400&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%232f6fa7'/%3E%3Ctext x='50' y='63' text-anchor='middle' font-size='42' font-family='Georgia,serif' fill='%23f3f9ff'%3EYF%3C/text%3E%3C/svg%3E">
 </head>
 <body>
-    <div class="container">
-        <div class="left-section">
-            <img src="./photo.jpg" alt="Zhiwei Hu" class="profile-image">
-            <h2>Zhiwei Hu</h2>
-            <h3>胡志伟</h3>
-            <div class="contact-info">
-                <p><span class="emoji">📍</span>Shanxi, China</p>
-                <p><span class="emoji">✉️</span>zhiweihu [AT] whu.edu.cn</p>
+  <header class="site-header">
+    <nav class="topbar" aria-label="Primary">
+      <a class="site-name" href="#">Yin Fang, Ph.D.</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="home-layout">
+      <aside class="profile-rail">
+        <img class="portrait" src="images/fy.JPG" alt="Yin Fang">
+
+        <div class="rail-content">
+          <div class="timeline" aria-label="Career timeline">
+            <div class="timeline-item">
+              <p><span>2024</span> Zhejiang University Ph.D.</p>
             </div>
-            <div class="social-links">
-                <a href="https://scholar.google.com/citations?hl=zh-CN&user=R0f81A4AAAAJ" target="_blank">
-                    <i class="fab fa-google-scholar"></i>
-                </a>
-                <a href="https://github.com/zhiweihu1103" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
+            <div class="timeline-item">
+              <p><span>2024</span> NIH Postdoc</p>
             </div>
+          </div>
         </div>
+      </aside>
 
-        <div class="right-section">
-            <section id="about">
-                <h2>About Me</h2>
-                <p style="margin-bottom: 10px;">
-                    I am now an Associate Professor at Shanxi Agricultural University. Before joining Shanxi Agricultural University, I earned my Ph.D. in Computer Science from Shanxi University supervised by Prof. <a href="https://www.researchgate.net/scientific-contributions/Ru-Li-14829601?_sg=VXNUDhg-exV6GUMTTzZ3UgEBy0zZa6hRgTd8V_oo4GZ0doGm9wp14Vo_rBLhkms1qfdWlJrEIZquUi0">Ru Li</a>, 
-                    Prof. <a href="https://knowledge-representation.org/j.z.pan/">Jeff Z. Pan</a> and 
-                    Prof. <a href="https://scholar.google.com/citations?user=L2eFo5IAAAAJ&hl=zh-CN">Víctor Gutiérrez Basulto</a>. During my doctoral studies, I was a visiting researcher at <a href="https://www.ed.ac.uk/" target="_blank">The University of Edinburgh</a> under the supervision of Prof. <a href="https://knowledge-representation.org/j.z.pan/" target="_blank">Jeff Z. Pan</a>.
-                </p>
+      <div class="home-main">
+        <section class="hero-bio">
+          <p>
+            I am a postdoctoral fellow at the National Library of Medicine, NIH, working with
+            <a href="https://www.ncbi.nlm.nih.gov/research/bionlp">Dr. Zhiyong Lu</a>.
+            I received my Ph.D. in Computer Science from Zhejiang University in June 2024, advised by
+            Professors <a href="https://person.zju.edu.cn/en/huajun">Huajun Chen</a>,
+            <a href="https://person.zju.edu.cn/en/ningyu">Ningyu Zhang</a>, and
+            <a href="https://person.zju.edu.cn/en/fanxh">Xiaohui Fan</a>.
+          </p>
 
-                <p>
-                    My research interests focus on AI for Agriculture, representation learning for knowledge graph, also I am interested in knowledge distillation in LLMs.
-                </p>
-            </section>
+          <p>
+            My research focuses on biomedical AI, especially large language models for biomedical reasoning, clinical
+            trial matching, and single-cell analysis. I am currently leading
+            <a href="https://www.ncbi.nlm.nih.gov/research/trialgpt/">TrialGPT</a>, NIH/NLM&rsquo;s AI-powered
+            system for patient-to-clinical-trial matching.
+          </p>
 
-            <section id="publications">
-                <h2>Selected Publications</h2>
-                <p style="font-size: 0.8em; color: #666666; margin: -5px 0 15px 0;">For a complete list of publications, please refer to my <a href="https://scholar.google.com/citations?hl=zh-CN&user=R0f81A4AAAAJ" style="color: #666666;">Google Scholar</a> profile.</p>
-                <div class="publication">
-                    <div class="publication-title">Hypermono: a Monotonicity-aware Approach to Hyper-relational Knowledge Representation</div>
-                    <div class="publication-authors"><strong>Zhiwei Hu</strong>, Víctor Gutiérrez-Basulto, Zhiliang Xiang, Ru Li, Jeff Z. Pan</div>
-                    <div class="publication-meta">
-                        <div class="publication-venue-large">Information Fusion 2026</div>
-                        <div class="publication-links">
-                            <a href="https://arxiv.org/pdf/2404.09848">Paper</a>
-                            <a href="https://github.com/zhiweihu1103/HKGC-HyperMono">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-title">Leveraging Intra-modal and Inter-modal Interaction for Multi-Modal Entity Alignment</div>
-                    <div class="publication-authors"><strong>Zhiwei Hu</strong>, Víctor Gutiérrez-Basulto, Zhiliang Xiang, Ru Li, Jeff Z. Pan</div>
-                    <div class="publication-meta">
-                        <div class="publication-venue-large">Neurocomputing 2026</div>
-                        <div class="publication-links">
-                            <a href="https://arxiv.org/pdf/2404.17590">Paper</a>
-                            <a href="https://github.com/zhiweihu1103/MEA-MIMEA">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-title">Multi-level Mixture of Experts for Multimodal Entity Linking</div>
-                    <div class="publication-authors"><strong>Zhiwei Hu</strong>, Víctor Gutiérrez-Basulto, Zhiliang Xiang, Ru Li, Jeff Z. Pan</div>
-                    <div class="publication-meta">
-                        <div class="publication-venue">KDD 2025</div>
-                        <div class="publication-links">
-                            <a href="https://dl.acm.org/doi/pdf/10.1145/3711896.3737060">Paper</a>
-                            <a href="https://github.com/zhiweihu1103/MEL-MMoE">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-title">Multi-level Matching Network for Multimodal Entity Linking</div>
-                    <div class="publication-authors"><strong>Zhiwei Hu</strong>, Víctor Gutiérrez-Basulto, Ru Li, Jeff Z. Pan</div>
-                    <div class="publication-meta">
-                        <div class="publication-venue">KDD 2025</div>
-                        <div class="publication-links">
-                            <a href="https://dl.acm.org/doi/pdf/10.1145/3690624.3709306">Paper</a>
-                            <a href="https://github.com/zhiweihu1103/MEL-M3EL">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-title">Multi-view Contrastive Learning for Entity Typing over Knowledge Graphs</div>
-                    <div class="publication-authors"><strong>Zhiwei Hu</strong>, Víctor Gutiérrez-Basulto, Zhiliang Xiang, Ru Li, Jeff Z. Pan</div>
-                    <div class="publication-meta">
-                        <div class="publication-venue">EMNLP 2023</div>
-                        <div class="publication-links">
-                            <a href="https://arxiv.org/pdf/2310.12008.pdf">Paper</a>
-                            <a href="https://github.com/zhiweihu1103/ET-MCLET">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-title">HyperFormer: Enhancing Entity and Relation Interaction for Hyper-Relational Knowledge Graph Completion</div>
-                    <div class="publication-authors"><strong>Zhiwei Hu</strong>, Víctor Gutiérrez-Basulto, Zhiliang Xiang, Ru Li, Jeff Z. Pan</div>
-                    <div class="publication-meta">
-                        <div class="publication-venue">CIKM 2023</div>
-                        <div class="publication-links">
-                            <a href="https://arxiv.org/pdf/2308.06512.pdf">Paper</a>
-                            <a href="https://github.com/zhiweihu1103/HKGC-HyperFormer">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-title">Transformer-based Entity Typing in Knowledge Graphs</div>
-                    <div class="publication-authors"><strong>Zhiwei Hu</strong>, Víctor Gutiérrez-Basulto, Zhiliang Xiang, Ru Li, Jeff Z. Pan</div>
-                    <div class="publication-meta">
-                        <div class="publication-venue">EMNLP 2022</div>
-                        <div class="publication-links">
-                            <a href="https://arxiv.org/pdf/2210.11151.pdf">Paper</a>
-                            <a href="https://github.com/zhiweihu1103/ET-TET">Code</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="publication">
-                    <div class="publication-title">Type-aware Embeddings for Multi-Hop Reasoning over Knowledge Graphs</div>
-                    <div class="publication-authors"><strong>Zhiwei Hu</strong>, Víctor Gutiérrez-Basulto, Zhiliang Xiang, Xiaoli Li, Ru Li, Jeff Z. Pan</div>
-                    <div class="publication-meta">
-                        <div class="publication-venue">IJCAI 2022</div>
-                        <div class="publication-links">
-                            <a href="https://arxiv.org/pdf/2205.00782.pdf">Paper</a>
-                            <a href="https://github.com/zhiweihu1103/QE-TEMP">Code</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
+          <p class="ext-links">
+            <a href="mailto:fine.yinfang@gmail.com">Email</a>
+            / <a href="https://scholar.google.com/citations?user=4rWspjsAAAAJ&amp;hl=en">Google Scholar</a>
+            / <a href="https://dblp.org/pid/231/7716.html">DBLP</a>
+            / <a href="cv/yin_fang_cv.pdf">CV</a>
+            / <a href="https://github.com/Fangyinfff">GitHub</a>
+            / <a href="https://twitter.com/YinFang1105">Twitter</a>
+          </p>
+        </section>
+
+        <section class="paper-deck" aria-labelledby="research-title">
+          <h2 id="research-title">Selected Research</h2>
+
+          <div class="paper-grid" aria-label="Selected papers">
+            <a class="paper-sheet" href="https://academic.oup.com/bioinformatics/article/42/5/btag208/8667159">
+              <span class="paper-area">Biomedical LLMs</span>
+              <span class="paper-preview">
+                <img src="images/paper-first-pages/cell-o1.png" alt="First page of the Cell-o1 paper">
+              </span>
+              <h3>Cell-o1: Training LLMs to Solve Single-Cell Reasoning Puzzles with Reinforcement Learning</h3>
+              <p><strong>Yin Fang</strong>, Qiao Jin, Guangzhi Xiong, Bowen Jin, Xianrui Zhong, Siru Ouyang, Aidong Zhang, Jiawei Han, Zhiyong Lu</p>
+              <span class="paper-venue">Bioinformatics, 2026</span>
+            </a>
+
+            <a class="paper-sheet" href="https://arxiv.org/abs/2603.05308">
+              <span class="paper-area">Medical LLMs</span>
+              <span class="paper-preview">
+                <img src="images/paper-first-pages/med-v1.png" alt="First page of the Med-V1 paper">
+              </span>
+              <h3>Med-V1: Small Language Models for Zero-shot and Scalable Biomedical Evidence Attribution</h3>
+              <p>Qiao Jin, <strong>Yin Fang*</strong>, Lauren He, Yifan Yang, Guangzhi Xiong, Zhizheng Wang, Nicholas Wan, Joey Chan, Donald C. Comeau, Robert Leaman, Charalampos S. Floudas, Aidong Zhang, Michael F. Chiang, Yifan Peng, Zhiyong Lu</p>
+              <span class="paper-venue">arXiv, 2026</span>
+            </a>
+
+            <a class="paper-sheet paper-sheet-featured" href="https://doi.org/10.1038/s42256-023-00654-0">
+              <span class="paper-area">Molecular AI</span>
+              <span class="paper-preview">
+                <img src="images/paper-first-pages/kano.png" alt="First page of the KANO paper">
+              </span>
+              <h3>Knowledge Graph-enhanced Molecular Contrastive Learning with Functional Prompt</h3>
+              <p><strong>Yin Fang</strong>, Qiang Zhang, Ningyu Zhang, Zhuo Chen, Xiang Zhuang, Xin Shao, Xiaohui Fan, Huajun Chen</p>
+              <span class="paper-venue">Nature Machine Intelligence, 2023</span>
+            </a>
+
+            <a class="paper-sheet" href="https://openreview.net/forum?id=Tlsdsb6l9n">
+              <span class="paper-area">Molecular LLMs</span>
+              <span class="paper-preview">
+                <img src="images/paper-first-pages/mol-instructions.png" alt="First page of the Mol-Instructions paper">
+              </span>
+              <h3>Mol-Instructions: A Large-Scale Biomolecular Instruction Dataset for Large Language Models</h3>
+              <p><strong>Yin Fang</strong>, Xiaozhuan Liang, Ningyu Zhang, Kangwei Liu, Rui Huang, Zhuo Chen, Xiaohui Fan, Huajun Chen</p>
+              <span class="paper-venue">ICLR, 2024</span>
+            </a>
+
+            <a class="paper-sheet" href="https://openreview.net/forum?id=9rPyHyjfwP">
+              <span class="paper-area">Molecular AI</span>
+              <span class="paper-preview">
+                <img src="images/paper-first-pages/molgen.png" alt="First page of the MolGen paper">
+              </span>
+              <h3>Domain-Agnostic Molecular Generation with Self-feedback</h3>
+              <p><strong>Yin Fang</strong>, Ningyu Zhang, Zhuo Chen, Lingbing Guo, Xiaohui Fan, Huajun Chen</p>
+              <span class="paper-venue">ICLR, 2024</span>
+            </a>
+
+            <a class="paper-sheet" href="https://doi.org/10.1021/acs.jcim.3c01977">
+              <span class="paper-area">Molecular LLMs</span>
+              <span class="paper-preview">
+                <img src="images/paper-first-pages/jcim.png" alt="First page of the molecular LLM review paper">
+              </span>
+              <h3>The Future of Molecular Studies through the Lens of Large Language Models</h3>
+              <p>Jinlu Zhang*, <strong>Yin Fang*</strong>, Xin Shao, Huajun Chen, Ningyu Zhang, Xiaohui Fan</p>
+              <span class="paper-venue">Journal of Chemical Information and Modeling, 2024</span>
+            </a>
+
+            <a class="paper-sheet" href="https://doi.org/10.1038/s41467-022-34271-z">
+              <span class="paper-area">Single-cell Omics</span>
+              <span class="paper-preview">
+                <img src="images/paper-first-pages/bulk2space.png" alt="First page of the Bulk2Space paper">
+              </span>
+              <h3>De Novo Analysis of Bulk RNA-seq Data at Spatially Resolved Single-cell Resolution</h3>
+              <p>Jie Liao*, Jingyang Qian*, <strong>Yin Fang*</strong>, Zhuo Chen*, Xiang Zhuang*, Ningyu Zhang, Xin Shao, Yining Hu, Penghui Yang, Junyun Cheng, Yang Hu, Lingqi Yu, Haihong Yang, Jinlu Zhang, Xiaoyan Lu, Li Shao, Dan Wu, Yue Gao, Huajun Chen, Xiaohui Fan</p>
+              <span class="paper-venue">Nature Communications, 2022</span>
+            </a>
+
+            <a class="paper-sheet" href="https://doi.org/10.1609/aaai.v36i4.20313">
+              <span class="paper-area">Molecular AI</span>
+              <span class="paper-preview">
+                <img src="images/paper-first-pages/kcl.png" alt="First page of the KCL paper">
+              </span>
+              <h3>Molecular Contrastive Learning with Chemical Element Knowledge Graph</h3>
+              <p><strong>Yin Fang</strong>, Qiang Zhang, Haihong Yang, Xiang Zhuang, Shumin Deng, Wen Zhang, Ming Qin, Zhuo Chen, Xiaohui Fan, Huajun Chen</p>
+              <span class="paper-venue">AAAI, 2022</span>
+            </a>
+
+            <a class="paper-sheet" href="https://doi.org/10.1007/978-981-97-5492-2_7">
+              <span class="paper-area">Molecular AI</span>
+              <span class="paper-preview">
+                <img src="images/paper-first-pages/paradigm.png" alt="First page of the knowledge-informed molecular learning survey">
+              </span>
+              <h3>Knowledge-informed Molecular Learning: A Survey on Paradigm Transfer</h3>
+              <p><strong>Yin Fang</strong>, Zhuo Chen, Xiaohui Fan, Ningyu Zhang, Huajun Chen</p>
+              <span class="paper-venue">KSEM, 2024</span>
+            </a>
+          </div>
+
+          <p class="paper-links">
+            * Equal contribution. Full list:
+            <a href="https://scholar.google.com/citations?user=4rWspjsAAAAJ&amp;hl=en">Google Scholar</a>
+          </p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Yin Fang &middot; NIH &middot; Updated June 2026</p>
+  </footer>
+
+  <script>
+    document.getElementById("theme-toggle").addEventListener("click", function () {
+      var current = document.documentElement.getAttribute("data-theme");
+      var next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    });
+
+  </script>
 </body>
 </html>
