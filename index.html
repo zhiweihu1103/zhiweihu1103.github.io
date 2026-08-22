@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zhiwei Hu</title>
+  <meta name="author" content="Zhiwei Hu">
+  <script>
+    (function () {
+      var savedTheme = localStorage.getItem("theme");
+      var preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.setAttribute("data-theme", savedTheme || preferredTheme);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,650;1,9..40,400&amp;family=DM+Serif+Display:ital@0;1&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheet.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%232f6fa7'/%3E%3Ctext x='50' y='63' text-anchor='middle' font-size='42' font-family='Georgia,serif' fill='%23f3f9ff'%3EYF%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="topbar" aria-label="Primary">
+      <a class="site-name" href="#">Zhiwei Hu, Associate Professor.</a>
+      <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
+        <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="home-layout">
+      <aside class="profile-rail">
+        <img class="portrait" src="images/zhiweihu" alt="Zhiwei Hu">
+
+        <div class="rail-content">
+          <div class="timeline" aria-label="Career timeline">
+            <div class="timeline-item">
+              <p><span>2025</span> Shanxi University Ph.D.</p>
+            </div>
+            <div class="timeline-item">
+              <p><span>2025</span> Shanxi Agricultural University</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <div class="home-main">
+        <section class="hero-bio">
+          <p>
+            I am now an Associate Professor at Shanxi Agricultural University. Before joining Shanxi Agricultural University, I earned my Ph.D. in Computer Science from Shanxi University supervised by Prof. <a href="https://www.researchgate.net/scientific-contributions/Ru-Li-14829601?_sg=VXNUDhg-exV6GUMTTzZ3UgEBy0zZa6hRgTd8V_oo4GZ0doGm9wp14Vo_rBLhkms1qfdWlJrEIZquUi0">Ru Li</a>, 
+            Prof. <a href="https://knowledge-representation.org/j.z.pan/">Jeff Z. Pan</a> and 
+            Prof. <a href="https://scholar.google.com/citations?user=L2eFo5IAAAAJ&hl=zh-CN">Víctor Gutiérrez Basulto</a>. During my doctoral studies, I was a visiting researcher at <a href="https://www.ed.ac.uk/" target="_blank">The University of Edinburgh</a> under the supervision of Prof. <a href="https://knowledge-representation.org/j.z.pan/" target="_blank">Jeff Z. Pan</a>.
+          </p>
+
+          <p>
+            My research interests focus on AI for Breeding, and representation learning for knowledge graph.
+          </p>
+
+          <p class="ext-links">
+            <a href="mailto:zhiweihu@whu.edu.cn">Email</a>
+            / <a href="https://scholar.google.com/citations?hl=zh-CN&user=R0f81A4AAAAJ">Google Scholar</a>
+            / <a href="https://github.com/zhiweihu1103">GitHub</a>
+          </p>
+        </section>
+
+        <section class="paper-deck" aria-labelledby="research-title">
+          <h2 id="research-title">Selected Research</h2>
+
+          <div class="paper-grid" aria-label="Selected papers">
+            <a class="paper-sheet" href="https://www.sciencedirect.com/science/article/pii/S1566253526005191">
+              <span class="paper-area">Knowledge Graphs</span>
+              <span class="paper-preview">
+                <img src="images/HyperMono.png" alt="First page of the HyperMono paper">
+              </span>
+              <h3>Monotonicity-aware Knowledge Fusion for Hyper-relational Knowledge Representation</h3>
+              <p><strong>Zhiwei Hu</strong>, Víctor Gutiérrez-Basulto, Zhiliang Xiang, Ru Li, Jeff Z. Pan</p>
+              <span class="paper-venue">Information Fusion, 2026</span>
+            </a>
+
+            <a class="paper-sheet" href="https://www.sciencedirect.com/science/article/pii/S0925231226004145">
+              <span class="paper-area">Entity Alignment</span>
+              <span class="paper-preview">
+                <img src="images/MIMEA.png" alt="First page of the MIMEA paper">
+              </span>
+              <h3>Leveraging Intra-modal and Inter-modal Interaction for Multi-Modal Entity Alignment</h3>
+              <p><strong>Zhiwei Hu</strong>, Víctor Gutiérrez-Basulto, Zhiliang Xiang, Ru Li, Jeff Z. Pan</p>
+              <span class="paper-venue">Neurocomputing, 2026</span>
+            </a>
+
+            <a class="paper-sheet" href="https://dl.acm.org/doi/pdf/10.1145/3690624.3709306">
+              <span class="paper-area">Entity Linking</span>
+              <span class="paper-preview">
+                <img src="images/M3EL.png" alt="First page of the M3EL paper">
+              </span>
+              <h3>Multi-level Matching Network for Multimodal Entity Linking</h3>
+              <p><strong>Zhiwei Hu</strong>, Víctor Gutiérrez-Basulto, Ru Li, Jeff Z. Pan</p>
+              <span class="paper-venue">KDD, 2025</span>
+            </a>
+
+            <a class="paper-sheet" href="https://dl.acm.org/doi/pdf/10.1145/3711896.3737060">
+              <span class="paper-area">Entity Linking</span>
+              <span class="paper-preview">
+                <img src="images/MMoE.png" alt="First page of the MMoE paper">
+              </span>
+              <h3>Multi-level Mixture of Experts for Multimodal Entity Linking</h3>
+              <p><strong>Zhiwei Hu</strong>, Víctor Gutiérrez-Basulto, Zhiliang Xiang, Ru Li, Jeff Z. Pan</p>
+              <span class="paper-venue">KDD, 2025</span>
+            </a>
+
+            <a class="paper-sheet" href="https://aclanthology.org/2023.emnlp-main.800.pdf">
+              <span class="paper-area">Entity Typing</span>
+              <span class="paper-preview">
+                <img src="images/MCLET.png" alt="First page of the MCLET paper">
+              </span>
+              <h3>Multi-view Contrastive Learning for Entity Typing over Knowledge Graphs</h3>
+              <p><strong>Zhiwei Hu</strong>, Víctor Gutiérrez-Basulto, Zhiliang Xiang, Ru Li, Jeff Z. Pan</p>
+              <span class="paper-venue">EMNLP main, 2023</span>
+            </a>
+
+            <a class="paper-sheet" href="https://dl.acm.org/doi/abs/10.1145/3583780.3614922">
+              <span class="paper-area">Knowledge Graphs</span>
+              <span class="paper-preview">
+                <img src="images/HyperFormer.png" alt="First page of the HyperFormer paper">
+              </span>
+              <h3>HyperFormer: Enhancing Entity and Relation Interaction for Hyper-Relational Knowledge Graph Completion</h3>
+              <p><strong>Zhiwei Hu</strong>, Víctor Gutiérrez-Basulto, Zhiliang Xiang, Ru Li, Jeff Z. Pan</p>
+              <span class="paper-venue">CIKM, 2023</span>
+            </a>
+
+            <a class="paper-sheet" href="https://aclanthology.org/2022.emnlp-main.402.pdf">
+              <span class="paper-area">Entity Typing</span>
+              <span class="paper-preview">
+                <img src="images/TET.png" alt="First page of the TET paper">
+              </span>
+              <h3>Transformer-based Entity Typing in Knowledge Graphs</h3>
+              <p><strong>Zhiwei Hu</strong>, Víctor Gutiérrez-Basulto, Zhiliang Xiang, Ru Li, Jeff Z. Pan</p>
+              <span class="paper-venue">EMNLP main, 2022</span>
+            </a>
+
+            <a class="paper-sheet" href="https://www.ijcai.org/proceedings/2022/0427.pdf">
+              <span class="paper-area">Knowledge Graphs</span>
+              <span class="paper-preview">
+                <img src="images/TEMP.png" alt="First page of the TEMP paper">
+              </span>
+              <h3>Type-aware Embeddings for Multi-hop Reasoning over Knowledge Graphs</h3>
+              <p><strong>Zhiwei Hu</strong>, Víctor Gutiérrez-Basulto, Zhiliang Xiang, Ru Li, Jeff Z. Pan</p>
+              <span class="paper-venue">IJCAI, 2022</span>
+            </a>
+            
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Zhiwei Hu &middot; Updated August 2026</p>
+  </footer>
+
+  <script>
+    document.getElementById("theme-toggle").addEventListener("click", function () {
+      var current = document.documentElement.getAttribute("data-theme");
+      var next = current === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+    });
+
+  </script>
+</body>
+</html>
